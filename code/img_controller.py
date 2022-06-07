@@ -3,7 +3,11 @@ from PyQt5.QtGui import QImage, QPixmap
 import cv2
 
 class img_controller(object):
-    def __init__(self, img_path, label_img, label_file_path, label_ratio, label_img_shape):
+
+    def __init__(self, img_path, label_img, label_file_path, label_ratio, label_img_shape, label_click_pos, label_norm_pos, label_real_pos):
+        self.label_click_pos = label_click_pos
+        self.label_norm_pos = label_norm_pos
+        self.label_real_pos = label_real_pos
         self.img_path = img_path
         self.label_img = label_img
         self.label_file_path = label_file_path
@@ -47,6 +51,7 @@ class img_controller(object):
     def __update_img(self):       
         self.label_img.setPixmap(self.qpixmap)
         self.label_img.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
+        self.label_img.mousePressEvent = self.get_clicked_position
 
     def __update_text_file_path(self):
         self.label_file_path.setText(f"File path = {self.img_path}")
@@ -70,3 +75,16 @@ class img_controller(object):
     def set_slider_value(self, value):
         self.ratio_value = value
         self.set_img_ratio()
+
+    def get_clicked_position(self, event):
+        x = event.pos().x()
+        y = event.pos().y()
+        self.norm_x = x/self.qpixmap.width()
+        self.norm_y = y/self.qpixmap.height()
+        print(f"(x, y) = ({x}, {y}), normalized (x, y) = ({self.norm_x}, {self.norm_y})")
+        self.__update_text_clicked_position(x, y)
+    
+    def __update_text_clicked_position(self, x, y):
+        self.label_click_pos.setText(f"Clicked postion = ({x}, {y})")
+        self.label_norm_pos.setText(f"Normalized postion = ({self.norm_x:.3f}, {self.norm_y:.3f})")
+        self.label_real_pos.setText(f"Real postion = ({int(self.norm_x*self.origin_width)}, {int(self.norm_y*self.origin_height)})")

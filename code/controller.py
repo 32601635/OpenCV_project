@@ -17,10 +17,13 @@ class MainWindow_controller(QMainWindow):
     def setup_control(self):
         self.file_path = ''
         self.img_controller = img_controller(img_path=self.file_path,
-                                             label_img=self.ui.label_img,
-                                             label_file_path=self.ui.label_file_name,
-                                             label_ratio=self.ui.label_ratio,
-                                             label_img_shape=self.ui.label_img_shape)
+									 label_img=self.ui.label_img,
+									 label_file_path=self.ui.label_file_name,
+									 label_ratio=self.ui.label_ratio,
+									 label_img_shape=self.ui.label_img_shape,
+									 label_click_pos=self.ui.label_click_pos,
+									 label_norm_pos=self.ui.label_norm_pos,
+									 label_real_pos=self.ui.label_real_pos)
 
         self.ui.btn_open_file.clicked.connect(self.open_file)         
         self.ui.btn_zoom_in.clicked.connect(self.img_controller.set_zoom_in)
