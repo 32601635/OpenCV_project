@@ -179,7 +179,6 @@ class img_controller(object):
                 sample1 = np.array(sample1,np.float32)
                 retval, results, neigh_resp, dists = model.findNearest(sample1, 1)        
                 number = int(results.ravel()[0])
-                #cv2.putText(img,str(number),(x+w+1,y+h-20), 3, 2., (255, 0, 0), 2, cv2.LINE_AA)
                 soduko[int(y/box_h)][int(x/box_w)] = number
         solveSudoku(soduko)
         for i in range(9):
