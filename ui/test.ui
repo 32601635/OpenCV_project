@@ -14,25 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_knn">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>520</y>
-      <width>80</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>辨識數字</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btn_knn_show">
     <property name="geometry">
      <rect>
@@ -148,7 +129,7 @@
      </font>
     </property>
     <property name="text">
-     <string>使用教學：使用者打開一張清晰的未解數獨的圖片，匯入後，按下辨識數字按鈕，即可導出辨識出來的結果，再按下數獨求解按鈕，則導出求解後的結果。</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;使用教學：使用者打開一張清晰的未解數獨的圖片，匯入後，按下顯示辨識結果按鈕，即可導出辨識出來的結果，再按下顯示求解按鈕，則導出求解後的結果。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="scaledContents">
      <bool>false</bool>
@@ -158,123 +139,6 @@
     </property>
     <property name="wordWrap">
      <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_info_ratio_roi">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>570</y>
-      <width>90</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>辨識結果：</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="text_ratio_roi">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>570</y>
-      <width>225</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_info_real_roi">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>570</y>
-      <width>90</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>求解結果：</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="text_real_roi">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>570</y>
-      <width>225</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_remark">
-    <property name="geometry">
-     <rect>
-      <x>930</x>
-      <y>630</y>
-      <width>275</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>備註：可以按下顯示辨識結果以及顯示求解結果按鈕，會將畫面中的圖片轉換成對應圖片</string>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_ans">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>520</y>
-      <width>80</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>微軟正黑體</family>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>數獨求解</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_ans_show">

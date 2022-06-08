@@ -39,8 +39,8 @@ def solveSudoku(grid, i=0, j=0):
             grid[i][j] = 0
     return False
 
-samples = np.load('samples.npy')
-labels = np.load('label.npy')
+samples = np.load('./npy/samples.npy')
+labels = np.load('./npy/label.npy')
 
 k = 800
 train_label = labels[:k]
