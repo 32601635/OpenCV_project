@@ -16,7 +16,6 @@ class MainWindow_controller(QMainWindow):
                                              label_img=self.ui.label_img,
                                              label_file_path=self.ui.label_file_name)
                                             
-
         self.ui.btn_open_file.clicked.connect(self.open_file)
         self.ui.btn_knn_show.clicked.connect(self.img_controller.knn_show)
         self.ui.btn_ans_show.clicked.connect(self.img_controller.ans_show)
