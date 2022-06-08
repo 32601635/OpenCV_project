@@ -1,15 +1,11 @@
 from PyQt5 import QtCore 
 from PyQt5.QtWidgets import QMainWindow, QFileDialog
-
-import time
-import os
-
 from UI import Ui_MainWindow
 from img_controller import img_controller
 
 class MainWindow_controller(QMainWindow):
     def __init__(self):
-        super().__init__() # in python3, super(Class, self).xxx = super().xxx
+        super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setup_control()
@@ -24,11 +20,9 @@ class MainWindow_controller(QMainWindow):
         self.ui.btn_open_file.clicked.connect(self.open_file)
         self.ui.btn_knn_show.clicked.connect(self.img_controller.knn_show)
         self.ui.btn_ans_show.clicked.connect(self.img_controller.ans_show)
-        #self.ui.btn_ans.clicked.connect(self.img_controller.set_zoom_in)
-        #self.ui.btn_ans_show.clicked.connect(self.img_controller.set_zoom_in)
 
     def open_file(self):
-        filename, filetype = QFileDialog.getOpenFileName(self, "Open file", "./") # start path        
+        filename, filetype = QFileDialog.getOpenFileName(self, "Open file", "./")
         self.init_new_picture(filename)
 
     def init_new_picture(self, filename):
